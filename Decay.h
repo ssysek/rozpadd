@@ -36,6 +36,8 @@ public:
     int NucleiOverTimeDiscStep();
     void PrintOutVector();
     std::vector<int> decayVec;
+    std::vector<double> energie; //wydzielona energia po danym czasie
+
 
 
 
@@ -48,7 +50,7 @@ private:
     double masa_pierwiastka;
     double masa_produktu;
     bool alfa;
-    std::vector<double> energie; //wydzielona energia po danym czasie
+
 
 
     int nuc_1;
