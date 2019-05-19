@@ -13,6 +13,17 @@ int main(int argc, char *argv[])
     Decay pierwiastek(1000,13,220.0113940,216.0019150,true);
     pierwiastek.NucleiOverTimeDisc(100,0.1);
     pierwiastek.FillEnergyMap();
+    
+    //int Nuclei, double HalfLife , double masa_pierwiastka, double masa_produktu,bool alfa
+    Decay Polon210(1000,11955686.4,209.9828737,205.9744653,true);
+    Decay Astat209(1000,19476,208.986174,204.977390,true);
+    Decay Radon210(1000,207360,209.989697,205.980482,true);
+    Decay Frans221(1000,288,221.014256,217.0047,true);
+    Decay Rad224(1000,13074.84,224.0202118,220.0113940,true);
+    Decay Aktyn225(1000,864000,225.023231,221.014256,true);
+    Decay Tor227(1000,1613952,227.0277041,223.0185022,true);
+    //Decay Protaktyn(1000,);
+    //Decay Uran(1000,);
 
 
 
