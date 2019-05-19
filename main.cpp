@@ -12,8 +12,8 @@ int main(int argc, char *argv[])
     std::cout<<pierwiastek.NucleiOverTimeDisc(20,0.1)<<std::endl;
     pierwiastek.PrintOutVector();
     QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
+    MainWindow ww;
+    ww.show();
 
     return a.exec();
 }
