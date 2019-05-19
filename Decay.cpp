@@ -7,6 +7,7 @@
 #include <iostream>
 #include <math.h>
 #include <map>
+#include <cfloat>
 
 using std::map;
 
@@ -91,7 +92,7 @@ int Decay::NucleiOverTimeDisc(double t, double dt) {
     this->t = 0;
     this->dt = dt;
     decayVec = {};
-    if(t == 0) t = MAXFLOAT;
+    if(t == 0) t = FLT_MAX;
     //decayVec.push_back(this->nuc_1);
     while(this->t + dt < t){
         if(this->nuc_1 == 0) break;
@@ -107,7 +108,7 @@ int Decay::NucleiOverTimeDiscStep() {
     int i = 0;
     double d = 1.0 - exp(-1*this->Lambda()*this->dt);
     for(int j = 0; j < this->nuc_1; j++){
-        roll = (double) random() / RAND_MAX;
+        roll = (double) rand() / RAND_MAX;
         if(roll < d){
             i++;
         }
