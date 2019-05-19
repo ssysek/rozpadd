@@ -8,6 +8,9 @@
 #include <math.h>
 #include <map>
 #include <vector>
+#include <QtCharts>
+
+QT_CHARTS_USE_NAMESPACE
 using std::map;
 class Decay {
 public:
@@ -32,6 +35,7 @@ public:
     int NucleiOverTimeDisc(double t, double dt);
     int NucleiOverTimeDiscStep();
     void PrintOutVector();
+    std::vector<int> decayVec;
 
 
 
@@ -51,7 +55,6 @@ private:
     double t;
     double dt;
 
-    std::vector<int> decayVec;
 
 };
 

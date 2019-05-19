@@ -8,8 +8,14 @@
 #include <math.h>
 #include <map>
 #include <cfloat>
+#include <ctime>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QMainWindow>
+#include <QtCharts/QChartView>
+#include <QtCharts/QLineSeries>
 
 using std::map;
+QT_CHARTS_USE_NAMESPACE
 
 double MASA_HELU=4.0015; //[u] masa cząsteczki alfa
 double MASA_ELEKTRONU=0.00055;
@@ -104,6 +110,7 @@ int Decay::NucleiOverTimeDisc(double t, double dt) {
 }
 
 int Decay::NucleiOverTimeDiscStep() {
+    //srand(time(NULL));
     double roll = 0;
     int i = 0;
     double d = 1.0 - exp(-1*this->Lambda()*this->dt);
@@ -120,9 +127,9 @@ int Decay::NucleiOverTimeDiscStep() {
 
 void Decay::PrintOutVector() {
     for(int i = 0; i < decayVec.size(); i++){
-        std::cout<<"["<<i<<"]";
-        std::cout<<decayVec[i]<<" ";
+//        std::cout<<"["<<i<<"]";
+//        std::cout<<decayVec[i]<<" ";
+
     }
-    std::cout<<std::endl;
 
 }
