@@ -93,7 +93,9 @@ double Decay::Lambda(){
     return log(2)/Half;
 }
 
-int Decay::NucleiOverTimeDisc(double t, double dt) {
+int Decay::NucleiOverTimeDisc() {
+    double dt=CalculateStep();
+    double t=CalculateTime(dt);
     this->nuc_1 = this->Nuc;
     this->t = 0;
     this->dt = dt;
@@ -123,6 +125,14 @@ int Decay::NucleiOverTimeDiscStep() {
     }
     this->nuc_1 -= i;
     this->t += this->dt;
+}
+
+double Decay::CalculateStep(){
+   return Half/130;
+}
+
+double Decay::CalculateTime(double step){
+   return step*1000;
 }
 
 void Decay::PrintOutVector() {

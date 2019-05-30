@@ -11,7 +11,7 @@ QT_CHARTS_USE_NAMESPACE
 int main(int argc, char *argv[])
 {
     Decay pierwiastek(1000,13,220.0113940,216.0019150,true);
-    pierwiastek.NucleiOverTimeDisc(100,0.1);
+    pierwiastek.NucleiOverTimeDisc();
     pierwiastek.FillMap();
     pierwiastek.FillEnergyMap();
     
@@ -34,10 +34,10 @@ int main(int argc, char *argv[])
         QLineSeries *series2 = new QLineSeries();
 
         for(int i = 0; i < pierwiastek.decayVec.size(); i++){
-            series->append(i*0.1,pierwiastek.decayVec[i]);
+            series->append(i*pierwiastek.CalculateStep(),pierwiastek.decayVec[i]);
         }
         for(int i = 0; i < pierwiastek.energie.size(); i++){
-            series2->append(i*0.1,pierwiastek.energie[i]);
+            series2->append(i*pierwiastek.CalculateStep(),pierwiastek.energie[i]);
         }
 
 

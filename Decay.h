@@ -32,8 +32,12 @@ public:
     void Print();
 
 
-    int NucleiOverTimeDisc(double t, double dt);
+    int NucleiOverTimeDisc();
     int NucleiOverTimeDiscStep();
+
+    double CalculateStep();
+    double CalculateTime(double step);
+
     void PrintOutVector();
     std::vector<int> decayVec;
     std::vector<double> energie; //wydzielona energia po danym czasie

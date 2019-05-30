@@ -16,7 +16,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_rysujWykres_clicked()
 {
-    if()
+
 }
+
 
 
