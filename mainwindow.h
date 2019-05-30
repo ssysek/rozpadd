@@ -18,6 +18,7 @@ public:
     bool wykrJ = false;
     bool wykrE = false;
 
+
 private slots:
     void on_rysujWykres_clicked();
 
@@ -29,6 +30,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+
 };
 
 #endif // MAINWINDOW_H

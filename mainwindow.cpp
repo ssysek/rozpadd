@@ -16,6 +16,21 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::on_pierwiastkiBox_currentIndexChanged(int index)
+{
+    currInd = index;
+}
+
+void MainWindow::on_wykresJ_toggled(bool checked)   //czy rysować wykres jednostek
+{
+    wykrJ = checked;
+}
+
+void MainWindow::on_wykresE_toggled(bool checked)   //czy rysować wykres energii
+{
+    wykrE = checked;
+}
+
 void MainWindow::on_rysujWykres_clicked()
 {
     Decay pierw;
@@ -45,8 +60,8 @@ void MainWindow::on_rysujWykres_clicked()
     if(wykrJ == true){
         pierw.NucleiOverTimeDisc();
         QLineSeries *jednSeries = new QLineSeries();
-        for(int i = 0; i < pierw.decayVec.size(); i++){
-            jednSeries->append(i*pierw.CalculateStep(),pierw.decayVec[i]);
+        for(int i = 0; i < (int)pierw.decayVec.size(); i++){
+            jednSeries->append(i*pierw.CalculateStep(),(int)pierw.decayVec[i]);
         }
         QChart *chart = new QChart();
         chart->legend()->hide();
@@ -83,17 +98,4 @@ void MainWindow::on_rysujWykres_clicked()
 
 
 
-void MainWindow::on_pierwiastkiBox_currentIndexChanged(int index)
-{
-    currInd = index;
-}
 
-void MainWindow::on_wykresJ_toggled(bool checked)   //czy rysować wykres jednostek
-{
-    wykrJ = checked;
-}
-
-void MainWindow::on_wykresE_toggled(bool checked)   //czy rysować wykres energii
-{
-    wykrE = checked;
-}
