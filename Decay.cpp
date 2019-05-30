@@ -80,7 +80,7 @@ int Decay::FillMap(){
 };
 
 void Decay::FillEnergyMap() {
-    for(auto elem : it){
+    for(auto elem : decayVec){
         energie.emplace_back(EnergiaAlfa(elem));
 
     }
