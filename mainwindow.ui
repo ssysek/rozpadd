@@ -6,20 +6,103 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>833</width>
-    <height>462</height>
+    <width>457</width>
+    <height>271</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="1">
+     <widget class="QFrame" name="gridFrame">
+      <layout class="QFormLayout" name="formLayout">
+       <item row="1" column="0">
+        <widget class="QComboBox" name="pierwiastkiBox">
+         <item>
+          <property name="text">
+           <string>Polon 210</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Astat 209</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Radon 210</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Frans 221</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Rad 224</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Aktyn 225</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Tor 227</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Wybierz pierwiastek, dla którego chcesz narysować wykresy:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QRadioButton" name="wykresJ">
+         <property name="text">
+          <string>Wykres ilości jednostek w czasie</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QRadioButton" name="wykresE">
+         <property name="text">
+          <string>Wykres energii w czasie</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Rodzaj wykresu, który chcesz narysować:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QPushButton" name="rysujWykres">
+         <property name="text">
+          <string>Rysuj wykres(y)</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
    </attribute>
    <attribute name="toolBarBreak">
-    <bool>false</bool>
+    <bool>true</bool>
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
@@ -28,16 +111,10 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>833</width>
+     <width>457</width>
      <height>22</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menurozpad">
-    <property name="title">
-     <string>rozpad</string>
-    </property>
-   </widget>
-   <addaction name="menurozpad"/>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

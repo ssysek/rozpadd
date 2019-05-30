@@ -13,3 +13,10 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+void MainWindow::on_rysujWykres_clicked()
+{
+    if()
+}
+
+
