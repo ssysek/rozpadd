@@ -20,7 +20,7 @@ public:
     int NucleiOverTimeCont(double time);
 
 
-    double EnergiaAlfa (int czas); //Ile jednostek energii rozpadu alfa zostało wytworzonej po danym czasie
+    long double EnergiaAlfa (int czas); //Ile jednostek energii rozpadu alfa zostało wytworzonej po danym czasie
 
     double EnergiaBeta(int czas);
 
@@ -40,7 +40,7 @@ public:
 
     void PrintOutVector();
     std::vector<int> decayVec;
-    std::vector<double> energie; //wydzielona energia po danym czasie
+    std::vector<long double> energie; //wydzielona energia po danym czasie
 
 
 

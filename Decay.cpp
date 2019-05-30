@@ -48,9 +48,9 @@ int Decay::NucleiOverTimeCont(double time) {
 
     return N;
 }
-double Decay::EnergiaAlfa (int czas) {
+long double Decay::EnergiaAlfa (int czas) {
 
-    double Energia = ((masa_pierwiastka-(masa_produktu+MASA_HELU)) * (Nuc-NucleiOverTimeCont(czas)) * PREDKOSC_SWIATLA * PREDKOSC_SWIATLA);
+    long double Energia = ((masa_pierwiastka-(masa_produktu+MASA_HELU)) * (Nuc-NucleiOverTimeCont(czas)) * PREDKOSC_SWIATLA * PREDKOSC_SWIATLA);
     return Energia;
 }
 
@@ -71,9 +71,11 @@ int Decay::FillMap(){
         it.emplace_back(i);
         i++;
     }
-    for(auto elem : v){
+    /*
+      for(auto elem : v){
         std::cout<<elem<<std::endl;
    }
+    */
     return 0;
 };
 
@@ -82,10 +84,7 @@ void Decay::FillEnergyMap() {
         energie.emplace_back(EnergiaAlfa(elem));
 
     }
-    for (auto elem: energie) {
-        std::cout << elem <<std::endl;
 
-    }
 
 }
 

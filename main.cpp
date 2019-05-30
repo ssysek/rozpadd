@@ -26,6 +26,9 @@ int main(int argc, char *argv[])
     //Decay Protaktyn(1000,);
     //Decay Uran(1000,);
 
+    Polon210.NucleiOverTimeDisc();
+    Polon210.FillMap();
+    //Polon210.FillEnergyMap();
 
 
     QApplication a(argc, argv);
@@ -33,11 +36,11 @@ int main(int argc, char *argv[])
         QLineSeries *series = new QLineSeries();
         QLineSeries *series2 = new QLineSeries();
 
-        for(int i = 0; i < pierwiastek.decayVec.size(); i++){
-            series->append(i*pierwiastek.CalculateStep(),pierwiastek.decayVec[i]);
+        for(int i = 0; i < Polon210.decayVec.size(); i++){
+            series->append(i*Polon210.CalculateStep(),Polon210.decayVec[i]);
         }
-        for(int i = 0; i < pierwiastek.energie.size(); i++){
-            series2->append(i*pierwiastek.CalculateStep(),pierwiastek.energie[i]);
+        for(int i = 0; i < Polon210.energie.size(); i++){
+            series2->append(i*Polon210.CalculateStep(),Polon210.energie[i]);
         }
 
 
