@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Rozpad pierwiastków</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout_2">
@@ -64,20 +64,6 @@
          </property>
         </widget>
        </item>
-       <item row="3" column="0">
-        <widget class="QRadioButton" name="wykresJ">
-         <property name="text">
-          <string>Wykres ilości jednostek w czasie</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="0">
-        <widget class="QRadioButton" name="wykresE">
-         <property name="text">
-          <string>Wykres energii w czasie</string>
-         </property>
-        </widget>
-       </item>
        <item row="2" column="0">
         <widget class="QLabel" name="label_2">
          <property name="text">
@@ -92,6 +78,20 @@
          </property>
         </widget>
        </item>
+       <item row="3" column="0">
+        <widget class="QCheckBox" name="wykresJ">
+         <property name="text">
+          <string>Wykres ilości jednostek w czasie</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QCheckBox" name="wykresE">
+         <property name="text">
+          <string>Wykres energii w czasie</string>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
     </item>
@@ -102,20 +102,10 @@
     <enum>TopToolBarArea</enum>
    </attribute>
    <attribute name="toolBarBreak">
-    <bool>true</bool>
+    <bool>false</bool>
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
-  <widget class="QMenuBar" name="menuBar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>457</width>
-     <height>22</height>
-    </rect>
-   </property>
-  </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

@@ -9,7 +9,7 @@
 QT_CHARTS_USE_NAMESPACE
 
 int main(int argc, char *argv[])
-{
+{/*
     Decay pierwiastek(1000,13,220.0113940,216.0019150,true);
     pierwiastek.NucleiOverTimeDisc();
     pierwiastek.FillMap();
@@ -70,5 +70,10 @@ int main(int argc, char *argv[])
         window2.show();
 
         return a.exec();
+        */
+    QApplication app(argc, argv);
+        MainWindow mainwindow;
+        mainwindow.show();
+        app.exec();
 
 }
