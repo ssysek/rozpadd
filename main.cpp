@@ -12,6 +12,7 @@ int main(int argc, char *argv[])
 {
     Decay pierwiastek(1000,13,220.0113940,216.0019150,true);
     pierwiastek.NucleiOverTimeDisc(100,0.1);
+    pierwiastek.FillMap();
     pierwiastek.FillEnergyMap();
     
     //int Nuclei, double HalfLife , double masa_pierwiastka, double masa_produktu,bool alfa
