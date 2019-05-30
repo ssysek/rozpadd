@@ -55,6 +55,7 @@ private:
     double masa_produktu;
     bool alfa;
 
+    long double suma_energii;
 
 
     int nuc_1;
