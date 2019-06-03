@@ -20,7 +20,7 @@ QT_CHARTS_USE_NAMESPACE
 double MASA_HELU=4.0015; //[u] masa cząsteczki alfa
 double MASA_ELEKTRONU=0.00055;
 long PREDKOSC_SWIATLA_KWADRAT=89875517874;//[km^2/s]
-
+int prev_elem=1000;
 Decay::Decay():Nuc(0),Half(0) {
 
 }
@@ -31,6 +31,7 @@ Decay::Decay(int Nuclei, double HalfLife , double _masa_pierwiastka, double _mas
     masa_pierwiastka=_masa_pierwiastka;
     masa_produktu=_masa_produktu;
     alfa=_alfa;
+    suma_energii=0;
 
     nuc_1 = Nuclei;
     t = 0;
@@ -56,7 +57,7 @@ long double Decay::EnergiaAlfa (int elem) {
 
 double Decay::EnergiaBeta (int czas) {
 
-    double Energia = ((masa_pierwiastka-(masa_produktu+2*MASA_ELEKTRONU)) * (Nuc-NucleiOverTimeCont(czas)) * PREDKOSC_SWIATLA * PREDKOSC_SWIATLA);
+    double Energia = ((masa_pierwiastka-(masa_produktu+2*MASA_ELEKTRONU)) * (Nuc-NucleiOverTimeCont(czas)) * PREDKOSC_SWIATLA_KWADRAT);
     return Energia;
 }
 
@@ -80,9 +81,15 @@ int Decay::FillMap(){
 };
 
 void Decay::FillEnergyMap() {
+
     for(auto elem : decayVec){
-        suma_energii=suma_energii+EnergiaAlfa(elem);
+        if(prev_elem>elem){
+            suma_energii=suma_energii+EnergiaAlfa(elem);
+
+        }
         energie.emplace_back(suma_energii);
+        prev_elem=elem;
+
 
     }
 
@@ -143,3 +150,4 @@ void Decay::PrintOutVector() {
     }
 
 }
+
