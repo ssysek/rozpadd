@@ -50,7 +50,7 @@ int Decay::NucleiOverTimeCont(double time) {
 }
 long double Decay::EnergiaAlfa (int elem) {
 
-    long double Energia = ((masa_pierwiastka-(masa_produktu+MASA_HELU)) * (Nuc-elem) );
+    long double Energia = ((masa_pierwiastka-(masa_produktu+MASA_HELU)) * (elem) );
     return Energia;
 }
 
