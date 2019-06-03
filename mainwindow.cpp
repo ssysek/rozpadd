@@ -63,7 +63,7 @@ void MainWindow::on_rysujWykres_clicked()
         }
     if(wykrJ == true){
         pierw.NucleiOverTimeDisc();
-        pierw.PrintOutVector();
+        //pierw.PrintOutVector();
         QLineSeries *jednSeries = new QLineSeries();
         for(int i = 0; i < (int)pierw.decayVec.size(); i++){
             jednSeries->append(i*pierw.CalculateStep(), pierw.decayVec[i]);
@@ -79,10 +79,11 @@ void MainWindow::on_rysujWykres_clicked()
 
         chart1 = new QMainWindow();
         chart1->setCentralWidget(jednChart);
-        chart1->resize(1080, 720);
+        chart1->resize(600, 500);
         chart1->show();
     }
     if(wykrE == true){
+        pierw.NucleiOverTimeDisc();
         pierw.FillMap();
         pierw.FillEnergyMap();
 
@@ -101,7 +102,7 @@ void MainWindow::on_rysujWykres_clicked()
 
         chart2 = new QMainWindow();
         chart2->setCentralWidget(energView);
-        chart2->resize(1080, 720);
+        chart2->resize(600,500);
         chart2->show();
 
     }

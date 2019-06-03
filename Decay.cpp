@@ -139,7 +139,7 @@ double Decay::CalculateStep(){
 }
 
 double Decay::CalculateTime(double step){
-   return step*1000;
+   return step*2000;
 }
 
 void Decay::PrintOutVector() {
