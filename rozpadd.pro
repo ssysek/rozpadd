@@ -26,14 +26,17 @@ CONFIG += c++11
 
 SOURCES += \
         Decay.cpp \
+        chartwindow.cpp \
         main.cpp \
         mainwindow.cpp
 
 HEADERS += \
         Decay.h \
+        chartwindow.h \
         mainwindow.h
 
 FORMS += \
+        chartwindow.ui \
         mainwindow.ui
 
 # Default rules for deployment.

@@ -144,8 +144,8 @@ double Decay::CalculateTime(double step){
 
 void Decay::PrintOutVector() {
     for(int i = 0; i < decayVec.size(); i++){
-//        std::cout<<"["<<i<<"]";
-//        std::cout<<decayVec[i]<<" ";
+        std::cout<<"["<<i<<"]";
+        std::cout<<decayVec[i]<<" ";
 
     }
 

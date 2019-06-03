@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <chartwindow.h>
 
 namespace Ui {
 class MainWindow;
@@ -30,6 +31,10 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    Ui::ChartWindow *cw1;
+    Ui::ChartWindow *cw2;
+    QMainWindow *chart1;
+    QMainWindow *chart2;
 
 };
 

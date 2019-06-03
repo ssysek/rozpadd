@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "Decay.h"
+#include "chartwindow.h"
 
 
 
@@ -15,25 +16,28 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-
+/*
 void MainWindow::on_pierwiastkiBox_currentIndexChanged(int index)
 {
-    currInd = index;
+
 }
 
 void MainWindow::on_wykresJ_toggled(bool checked)   //czy rysować wykres jednostek
 {
-    wykrJ = checked;
+
 }
 
 void MainWindow::on_wykresE_toggled(bool checked)   //czy rysować wykres energii
 {
-    wykrE = checked;
-}
 
+}
+*/
 void MainWindow::on_rysujWykres_clicked()
 {
     Decay pierw;
+    int currInd = ui->pierwiastkiBox->currentIndex();
+    bool wykrJ = ui->wykresJ->isChecked();
+    bool wykrE = ui->wykresE->isChecked();
     switch (currInd) { //wybrany pierwiastek
     case 0: //polon 210
         pierw = Decay(1000,11955686.4,209.9828737,205.9744653,true);
@@ -59,9 +63,10 @@ void MainWindow::on_rysujWykres_clicked()
         }
     if(wykrJ == true){
         pierw.NucleiOverTimeDisc();
+        pierw.PrintOutVector();
         QLineSeries *jednSeries = new QLineSeries();
         for(int i = 0; i < (int)pierw.decayVec.size(); i++){
-            jednSeries->append(i*pierw.CalculateStep(),(int)pierw.decayVec[i]);
+            jednSeries->append(i*pierw.CalculateStep(), pierw.decayVec[i]);
         }
         QChart *chart = new QChart();
         chart->legend()->hide();
@@ -72,14 +77,15 @@ void MainWindow::on_rysujWykres_clicked()
         QChartView *jednChart = new QChartView(chart);
         jednChart->setRenderHint(QPainter::Antialiasing);
 
-        QMainWindow jednWindow;
-        jednWindow.setCentralWidget(jednChart);
-        jednWindow.resize(1080, 720);
-        jednWindow.show();
+        chart1 = new QMainWindow();
+        chart1->setCentralWidget(jednChart);
+        chart1->resize(1080, 720);
+        chart1->show();
     }
     if(wykrE == true){
         pierw.FillMap();
         pierw.FillEnergyMap();
+
         QLineSeries *energSeries = new QLineSeries();
         for(int i = 0; i < pierw.energie.size(); i++){
             energSeries->append(i*pierw.CalculateStep(),pierw.energie[i]);
@@ -93,9 +99,29 @@ void MainWindow::on_rysujWykres_clicked()
         QChartView *energView = new QChartView(energChart);
         energView->setRenderHint(QPainter::Antialiasing);
 
+        chart2 = new QMainWindow();
+        chart2->setCentralWidget(energView);
+        chart2->resize(1080, 720);
+        chart2->show();
+
     }
 }
 
 
 
+//Z DUPY
 
+void MainWindow::on_pierwiastkiBox_currentIndexChanged(int index)
+{
+
+}
+
+void MainWindow::on_wykresJ_toggled(bool checked)
+{
+
+}
+
+void MainWindow::on_wykresE_toggled(bool checked)
+{
+
+}
