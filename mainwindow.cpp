@@ -72,7 +72,9 @@ void MainWindow::on_rysujWykres_clicked()
         chart->legend()->hide();
         chart->addSeries(jednSeries);
         chart->createDefaultAxes();
-        chart->setTitle("Ilość jąder w czasie");
+        chart->setAnimationOptions(QChart::SeriesAnimations);
+        chart->setAnimationDuration(25000);
+        chart->setTitle("Ilość jąder w czasie[n/s]");
 
         QChartView *jednChart = new QChartView(chart);
         jednChart->setRenderHint(QPainter::Antialiasing);
@@ -95,7 +97,9 @@ void MainWindow::on_rysujWykres_clicked()
         energChart->legend()->hide();
         energChart->addSeries(energSeries);
         energChart->createDefaultAxes();
-        energChart->setTitle("Energia w czasie");
+        energChart->setAnimationOptions(QChart::SeriesAnimations);
+        energChart->setAnimationDuration(25000);
+        energChart->setTitle("Energia w czasie(Hartree na sekundę)[E/s]");
 
         QChartView *energView = new QChartView(energChart);
         energView->setRenderHint(QPainter::Antialiasing);
@@ -110,7 +114,6 @@ void MainWindow::on_rysujWykres_clicked()
 
 
 
-//Z DUPY
 
 void MainWindow::on_pierwiastkiBox_currentIndexChanged(int index)
 {
