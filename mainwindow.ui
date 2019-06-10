@@ -15,7 +15,7 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout_2">
-    <item row="0" column="0">
+    <item row="1" column="0">
      <widget class="QFrame" name="gridFrame">
       <layout class="QFormLayout" name="formLayout">
        <item row="1" column="0">
@@ -64,31 +64,38 @@
          </property>
         </widget>
        </item>
-       <item row="2" column="0">
+       <item row="3" column="0">
         <widget class="QLabel" name="label_2">
          <property name="text">
           <string>Rodzaj wykresu, który chcesz narysować:</string>
          </property>
         </widget>
        </item>
-       <item row="5" column="0">
-        <widget class="QPushButton" name="rysujWykres">
-         <property name="text">
-          <string>Rysuj wykres(y)</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0">
+       <item row="4" column="0">
         <widget class="QCheckBox" name="wykresJ">
          <property name="text">
           <string>Wykres ilości jednostek w czasie</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="0">
+       <item row="6" column="0">
         <widget class="QCheckBox" name="wykresE">
          <property name="text">
           <string>Wykres energii w czasie</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="QPushButton" name="rysujWykres">
+         <property name="text">
+          <string>Rysuj wykres(y)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QPushButton" name="pushButton">
+         <property name="text">
+          <string>Wprowadź własny pierwiastek</string>
          </property>
         </widget>
        </item>

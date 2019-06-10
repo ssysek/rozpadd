@@ -29,6 +29,8 @@ private slots:
 
     void on_wykresE_toggled(bool checked);
 
+    void on_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     Ui::ChartWindow *cw1;

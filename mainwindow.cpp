@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "Decay.h"
 #include "chartwindow.h"
+#include "customelement.h"
 
 
 
@@ -128,4 +129,10 @@ void MainWindow::on_wykresJ_toggled(bool checked)
 void MainWindow::on_wykresE_toggled(bool checked)
 {
 
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    CustomElement *cust = new CustomElement();
+    cust->show();
 }
